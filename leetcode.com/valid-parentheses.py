@@ -25,3 +25,4 @@ class Solution:
             # s = s.replace('()', '').replace('{}', '').replace('[]', '')
 
         return len(s) == 0
+
