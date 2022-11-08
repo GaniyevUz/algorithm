@@ -1,45 +1,46 @@
-# d = {len(i): i for i in input().split()}
-# print(d[max(d)])
+from typing import List
 
-# https://algo.ubtuit.uz/problem/164
+#
+# list1 = ["Shogun", "Piatti", "Tapioca Express", "Burger King", "KFC"]
+#
+# list2 = ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]
+#
+#
+# def findRestaurant(list1: List[str], list2: List[str]) -> List[str]:
+#     l1 = {v: i for i, v in enumerate(list1)}
+#     d = {}
+#     l = []
+#     for i, v in enumerate(list2):
+#         if v in l1.keys():
+#             d[v] = sum((l1[v], i))
+#     min_ = min(d.values())
+#     for i, v in d.items():
+#         if v == min_:
+#             l.append(i)
+#     return l
+#
+#
+# print(findRestaurant(list1, list2))
 
-# s = input()
-# l, r = map(int, input().split())
-# if l > r:
-#     print(s[r-1:l][::-1])
-# else:
-#     print(s[l - 1:r])
 
-# from math import sin
+# a = [
+#     [9, 9, 8, 1],
+#     [5, 6, 11, 6],
+#     [8, 2, 6, 4],
+#     [6, 2, 2, 2]
+# ]
 #
-# t, s = map(float, input().split())
-#
-#
-# def f(a, b, c):
-#     return (2 * a - b - sin(c)) / (5 + abs(c))
-#
-#
-# r = f(t, -2 * s, 1.17) + f(2.2, t, s - t)
-# print(f"{r:.2f}")
+# result = [[max(a[i - 1][j - 1:j + 2] + a[i][j - 1:j + 2] + a[i + 1][j - 1:j + 2]) for j in range(1, len(a) - 1)] for i in range(1, len(a) - 1)]
+# print(result)
 
-# https://algo.ubtuit.uz/problem/175
+# https://leetcode.com/problems/flipping-an-image/submissions/
+# image = [[1, 1, 0], [1, 0, 1], [0, 0, 0]]
+# print(list([1 if j == 0 else 0 for j in i[::-1]] for i in image))
 
-# s = input()
-# temp = ''
-#
-# for i in s:
-#     if i == '(' or '(' in temp:
-#         temp += i
-#     if i == ')':
-#         s = s.replace(temp, temp[1:-1][::-1])
-#         temp = ''
-#
-# print(s)
-# n = set(map(int, input().split()))
-#
-# while n != '{0}':
-#     if len(n) == 3:
-#         print("yes")
-#     else:
-#         print("no")
-#     n = set(map(int, input().split()))
+matrix = [[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]]
+
+for i in range(1, len(matrix)):
+    for j in range(1, len(matrix[i])):
+        if matrix[i][j] == matrix[i - 1][j - 1]:
+            print(matrix[i][j], end=' ')
+    print()

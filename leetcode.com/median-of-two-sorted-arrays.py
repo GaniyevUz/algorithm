@@ -4,7 +4,6 @@
 
 from typing import List
 
-
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         result = []
@@ -33,8 +32,7 @@ class Solution:
             return float((result[median - 1] + result[median]) / 2)
         return float(result[median])
 
-
-num1 = [1, 3]
-num2 = [2]
+num1 = []
+num2 = [2, 3]
 problem = Solution()
 print(problem.findMedianSortedArrays(num1, num2))
